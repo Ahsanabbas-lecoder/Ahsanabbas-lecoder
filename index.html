@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahsan Abbas - Web Developer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+        .hero {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+        }
+        .section-title {
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        .skill-card, .project-card {
+            border-left: 3px solid var(--primary-color);
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: transform 0.3s;
+        }
+        .skill-card:hover, .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .contact-info i {
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 30px 0;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+        .project-img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        .badge-tech {
+            background-color: var(--primary-color);
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 0;
+        }
+        #projects {
+            min-height: 400px; /* Ensure section has space */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Ahsan Abbas</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero text-center">
+        <div class="floating-shape" id="shape1"></div>
+        <div class="floating-shape" id="shape2"></div>
+        <div class="floating-shape" id="shape3"></div>
+        <div class="container position-relative">
+            <img src="/ASSETS/Images/photo.jpeg" alt="Ahsan Abbas" class="profile-img mb-4" id="profile-img">
+            <h1 id="hero-title">Ahsan Abbas</h1>
+            <p class="lead" id="hero-subtitle">Aspiring Web Developer</p>
+            <div class="mt-4" id="hero-buttons">
+                <a href="#contact" class="btn btn-primary btn-lg me-2">Contact Me</a>
+                <a href="#projects" class="btn btn-outline-light btn-lg">View Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title" id="about-title">About Me</h2>
+            <div class="row">
+                <div class="col-lg-6" id="about-left">
+                    <h3>Career Objective</h3>
+                    <p>I am an aspiring web developer with foundational knowledge of HTML, CSS, and JavaScript. I have built a few small projects to practice my skills, including responsive web pages and simple interactive features. I'm eager to continue learning and contributing to a professional team while growing as a developer.</p>
+                </div>
+                <div class="col-lg-6" id="about-right">
+                    <h3>Personal Profile</h3>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-check-circle-fill text-primary"></i> Energetic, detail-oriented, and self-driven with interpersonal skills</li>
+                        <li><i class="bi bi-check-circle-fill text-primary"></i> Able to handle pressure and deadlines</li>
+                        <li><i class="bi bi-check-circle-fill text-primary"></i> Good communication skills</li>
+                        <li><i class="bi bi-check-circle-fill text-primary"></i> Self-decision making and handle critical situations confidently</li>
+                        <li><i class="bi bi-check-circle-fill text-primary"></i> Interests: Cooking and Photography</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title" id="projects-title">My Projects</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4 project-card" id="project1">
+                    <div class="card h-100">
+                        <img src="/ASSETS/Images/au.png" class="project-img card-img-top" alt="Auar Watches">
+                        <div class="card-body">
+                            <h4 class="card-title">Auar Watches</h4>
+                            <p class="card-text">An e-commerce website for a watch store showcasing products with clean design and responsive layout.</p>
+                            <div class="mb-3">
+                                <span class="badge badge-tech">HTML</span>
+                                <span class="badge badge-tech">CSS</span>
+                                <span class="badge badge-tech">JavaScript</span>
+                                <span class="badge badge-tech">Bootstrap</span>
+                            </div>
+                            <a href="https://auar-watches.vercel.app/" target="_blank" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4 project-card" id="project2">
+                    <div class="card h-100">
+                        <img src="/ASSETS/Images/Untitled.png" class="project-img card-img-top" alt="Karabal Aidiniyat Class Admission Form">
+                        <div class="card-body">
+                            <h4 class="card-title">Karabal Aidiniyat Class Admission Form</h4>
+                            <p class="card-text">An interactive admission form with validation and submission functionality for an educational institution.</p>
+                            <div class="mb-3">
+                                <span class="badge badge-tech">HTML</span>
+                                <span class="badge badge-tech">CSS</span>
+                                <span class="badge badge-tech">JavaScript</span>
+                                <span class="badge badge-tech">Form Validation</span>
+                            </div>
+                            <a href="https://karabalaidiniyatclass-admissionform.vercel.app/" target="_blank" class="btn btn-primary">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2 class="section-title" id="skills-title">Technical Skills</h2>
+            <div class="row">
+                <div class="col-md-6 skill-card" id="skill1">
+                    <div class="bg-white shadow-sm p-3">
+                        <h4><i class="bi bi-code-slash text-primary"></i> HTML</h4>
+                        <p>Experience creating the structure of web pages, ensuring semantic markup for better SEO and accessibility.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 skill-card" id="skill2">
+                    <div class="bg-white shadow-sm p-3">
+                        <h4><i class="bi bi-palette text-primary"></i> CSS</h4>
+                        <p>Proficient in styling web pages, including knowledge of layouts (Flexbox, Grid), and responsive design for mobile-friendly websites.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 skill-card" id="skill3">
+                    <div class="bg-white shadow-sm p-3">
+                        <h4><i class="bi bi-filetype-js text-primary"></i> JavaScript</h4>
+                        <p>Basic understanding of programming logic, functions, and DOM manipulation. Started learning to add interactivity to websites, such as creating interactive forms or simple animations.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 skill-card" id="skill4">
+                    <div class="bg-white shadow-sm p-3">
+                        <h4><i class="bi bi-phone text-primary"></i> Responsive Design</h4>
+                        <p>Applied responsive design principles using media queries to ensure websites work seamlessly across various screen sizes (mobile, tablet, desktop).</p>
+                    </div>
+                </div>
+                <div class="col-md-6 skill-card" id="skill5">
+                    <div class="bg-white shadow-sm p-3">
+                        <h4><i class="bi bi-tools text-primary"></i> Tools & Libraries</h4>
+                        <p>Proficient in VS Code for web development. Familiar with Bootstrap for quick and mobile-first web design. Comfortable using Chrome DevTools for inspecting elements and debugging.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 skill-card" id="skill6">
+                    <div class="bg-white shadow-sm p-3">
+                        <h4><i class="bi bi-translate text-primary"></i> Languages</h4>
+                        <p>English, Urdu, Japanese (elementary)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title" id="education-title">Education & Qualifications</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4" id="edu1">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">Web Development Course</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">Aptech (Shahrah-e-Faisal Branch)</h6>
+                            <p class="card-text">Currently enrolled</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" id="edu2">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">Intermediate</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">Fatimiyah College (Computer Science Group)</h6>
+                            <p class="card-text">Currently enrolled</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" id="edu3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">Matriculation</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">Meritorious School (Science Group)</h6>
+                            <p class="card-text">Completed in 2022-23 (IX - X)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title" id="contact-title">Contact Information</h2>
+            <div class="row">
+                <div class="col-md-6" id="contact-info">
+                    <div class="contact-info mb-4">
+                        <p><i class="bi bi-telephone"></i> <strong>Phone/WhatsApp:</strong> +92319-1869089 (Pakistan)</p>
+                        <p><i class="bi bi-envelope"></i> <strong>Email:</strong> ahsanabbasmahunmadai1225@gmail.com</p>
+                        <p><i class="bi bi-calendar"></i> <strong>Date of Birth:</strong> 04<sup>th</sup> July 2006</p>
+                        <p><i class="bi bi-person"></i> <strong>Marital Status:</strong> Unmarried</p>
+                    </div>
+                </div>
+                <div class="col-md-6" id="contact-form">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="social-icons mb-3">
+                <a href="https://github.com" target="_blank"><i class="bi bi-github"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="bi bi-linkedin"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+            </div>
+            <p>© 2025 Ahsan Abbas. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <script>
+        // Wait for the page to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Verify GSAP and ScrollTrigger are loaded
+            console.log('GSAP:', typeof gsap !== 'undefined' ? 'Loaded' : 'Not Loaded');
+            console.log('ScrollTrigger:', typeof ScrollTrigger !== 'undefined' ? 'Loaded' : 'Not Loaded');
+
+            // Register ScrollTrigger plugin
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+            } else {
+                console.error('GSAP or ScrollTrigger failed to load');
+                // Fallback: Ensure project cards are visible
+                document.querySelectorAll('.project-card, .skill-card').forEach(card => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                });
+            }
+
+            // Hero section animations
+            gsap.from("#profile-img", {
+                duration: 1,
+                y: -50,
+                opacity: 0,
+                ease: "back.out(1.7)"
+            });
+
+            gsap.from("#hero-title", {
+                duration: 1,
+                y: -30,
+                opacity: 0,
+                delay: 0.3,
+                ease: "power3.out"
+            });
+
+            gsap.from("#hero-subtitle", {
+                duration: 1,
+                y: -30,
+                opacity: 0,
+                delay: 0.6,
+                ease: "power3.out"
+            });
+
+            gsap.from("#hero-buttons", {
+                duration: 1,
+                y: 30,
+                opacity: 0,
+                delay: 0.9,
+                ease: "power3.out"
+            });
+
+            // Floating shapes animation
+            gsap.to("#shape1", {
+                duration: 20,
+                x: 100,
+                y: 50,
+                rotation: 360,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
+
+            gsap.to("#shape2", {
+                duration: 25,
+                x: -80,
+                y: -30,
+                rotation: -360,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                delay: 0.5
+            });
+
+            gsap.to("#shape3", {
+                duration: 30,
+                x: 50,
+                y: -80,
+                rotation: 180,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                delay: 1
+            });
+
+            // Create floating shapes
+            const createShapes = () => {
+                const colors = ["rgba(52, 152, 219, 0.2)", "rgba(155, 89, 182, 0.2)", "rgba(26, 188, 156, 0.2)"];
+                for (let i = 1; i <= 3; i++) {
+                    const shape = document.getElementById(`shape${i}`);
+                    shape.style.width = `${Math.random() * 150 + 50}px`;
+                    shape.style.height = shape.style.width;
+                    shape.style.background = colors[i-1];
+                    shape.style.top = `${Math.random() * 80 + 10}%`;
+                    shape.style.left = `${Math.random() * 80 + 10}%`;
+                }
+            };
+            createShapes();
+
+            // Section title animations
+            gsap.utils.toArray(".section-title").forEach(title => {
+                gsap.from(title, {
+                    scrollTrigger: {
+                        trigger: title,
+                        start: "top 90%",
+                        toggleActions: "play none none none"
+                    },
+                    duration: 0.8,
+                    x: -50,
+                    opacity: 0,
+                    ease: "power3.out"
+                });
+            });
+
+            // About section animations
+            gsap.from("#about-left", {
+                scrollTrigger: {
+                    trigger: "#about",
+                    start: "top 90%",
+                    toggleActions: "play none none none"
+                },
+                duration: 0.8,
+                x: -50,
+                opacity: 0,
+                ease: "power3.out"
+            });
+
+            gsap.from("#about-right", {
+                scrollTrigger: {
+                    trigger: "#about",
+                    start: "top 90%",
+                    toggleActions: "play none none none"
+                },
+                duration: 0.8,
+                x: 50,
+                opacity: 0,
+                ease: "power3.out",
+                delay: 0.2
+            });
+
+            // Projects animations
+            gsap.set(".project-card", { opacity: 0, y: 50 }); // Set initial state
+            gsap.utils.toArray(".project-card").forEach((card, i) => {
+                gsap.to(card, {
+                    scrollTrigger: {
+                        trigger: "#projects",
+                        start: "top 90%",
+                        toggleActions: "play none none none",
+                        onEnter: () => console.log(`Project card ${i + 1} animation triggered`)
+                    },
+                    duration: 0.8,
+                    y: 0,
+                    opacity: 1,
+                    ease: "power3.out",
+                    delay: i * 0.1
+                });
+            });
+
+            // Skills animations
+            gsap.set(".skill-card", { opacity: 0, y: 50 });
+            gsap.utils.toArray(".skill-card").forEach((card, i) => {
+                gsap.to(card, {
+                    scrollTrigger: {
+                        trigger: "#skills",
+                        start: "top 90%",
+                        toggleActions: "play none none none"
+                    },
+                    duration: 0.8,
+                    y: 0,
+                    opacity: 1,
+                    ease: "power3.out",
+                    delay: i * 0.1
+                });
+            });
+
+            // Education animations
+            gsap.utils.toArray("#edu1, #edu2, #edu3").forEach((edu, i) => {
+                gsap.from(edu, {
+                    scrollTrigger: {
+                        trigger: "#education",
+                        start: "top 90%",
+                        toggleActions: "play none none none"
+                    },
+                    duration: 0.8,
+                    y: 50,
+                    opacity: 0,
+                    ease: "power3.out",
+                    delay: i * 0.2
+                });
+            });
+
+            // Contact animations
+            gsap.from("#contact-info", {
+                scrollTrigger: {
+                    trigger: "#contact",
+                    start: "top 90%",
+                    toggleActions: "play none none none"
+                },
+                duration: 0.8,
+                x: -50,
+                opacity: 0,
+                ease: "power3.out"
+            });
+
+            gsap.from("#contact-form", {
+                scrollTrigger: {
+                    trigger: "#contact",
+                    start: "top 90%",
+                    toggleActions: "play none none none"
+                },
+                duration: 0.8,
+                x: 50,
+                opacity: 0,
+                ease: "power3.out",
+                delay: 0.2
+            });
+
+            // Form submission handling
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Form submitted! (No backend implemented yet)');
+                this.reset();
+            });
+        });
+    </script>
+</body>
+</html>
