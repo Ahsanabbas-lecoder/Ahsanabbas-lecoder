@@ -8,99 +8,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <style>
-        :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-            overflow-x: hidden;
-        }
-        .hero {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 100px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid white;
-        }
-        .section-title {
-            color: var(--primary-color);
-            position: relative;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-        .skill-card, .project-card {
-            border-left: 3px solid var(--primary-color);
-            padding: 15px;
-            margin-bottom: 15px;
-            transition: transform 0.3s;
-        }
-        .skill-card:hover, .project-card:hover {
-            transform: translateY(-5px);
-        }
-        .contact-info i {
-            color: var(--primary-color);
-            margin-right: 10px;
-        }
-        footer {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 30px 0;
-        }
-        .social-icons a {
-            color: white;
-            font-size: 1.5rem;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
-        .social-icons a:hover {
-            color: var(--primary-color);
-        }
-        .project-img {
-            height: 200px;
-            object-fit: cover;
-            width: 100%;
-        }
-        .badge-tech {
-            background-color: var(--primary-color);
-            margin-right: 5px;
-            margin-bottom: 5px;
-        }
-        .floating-shape {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            z-index: 0;
-        }
-        #projects {
-            min-height: 400px; /* Ensure section has space */
-        }
-    </style>
+    <link rel="stylesheet" href="/ASSETS/CSS/style.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" aria-label="Main navigation">
         <div class="container">
             <a class="navbar-brand" href="#">Ahsan Abbas</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -126,12 +41,12 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero text-center">
+    <section class="hero text-center" aria-labelledby="hero-title">
         <div class="floating-shape" id="shape1"></div>
         <div class="floating-shape" id="shape2"></div>
         <div class="floating-shape" id="shape3"></div>
         <div class="container position-relative">
-            <img src="/ASSETS/Images/photo.jpeg" alt="Ahsan Abbas" class="profile-img mb-4" id="profile-img">
+            <img src="/ASSETS/Images/photo.jpeg" alt="Ahsan Abbas profile picture" class="profile-img mb-4" id="profile-img" loading="lazy">
             <h1 id="hero-title">Ahsan Abbas</h1>
             <p class="lead" id="hero-subtitle">Aspiring Web Developer</p>
             <div class="mt-4" id="hero-buttons">
@@ -142,7 +57,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-5">
+    <section id="about" class="py-5" aria-labelledby="about-title">
         <div class="container">
             <h2 class="section-title" id="about-title">About Me</h2>
             <div class="row">
@@ -165,21 +80,22 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-5 bg-light">
+    <section id="projects" class="py-5 bg-light" aria-labelledby="projects-title">
         <div class="container">
             <h2 class="section-title" id="projects-title">My Projects</h2>
             <div class="row">
-                <div class="col-md-6 mb-4 project-card" id="project1">
+                <div class="col-md-6 mb-4 project-card position-relative" id="project1">
                     <div class="card h-100">
-                        <img src="/ASSETS/Images/au.png" class="project-img card-img-top" alt="Auar Watches">
+                        <span class="badge badge-featured">Featured</span>
+                        <img src="/ASSETS/Images/au.png" class="project-img card-img-top" alt="Auar Watches project" loading="lazy" onerror="this.src='https://via.placeholder.com/300x220?text=Project+Image'">
                         <div class="card-body">
                             <h4 class="card-title">Auar Watches</h4>
                             <p class="card-text">An e-commerce website for a watch store showcasing products with clean design and responsive layout.</p>
                             <div class="mb-3">
-                                <span class="badge badge-tech">HTML</span>
-                                <span class="badge badge-tech">CSS</span>
-                                <span class="badge badge-tech">JavaScript</span>
-                                <span class="badge badge-tech">Bootstrap</span>
+                                <span class="badge rounded-pill badge-tech">HTML</span>
+                                <span class="badge rounded-pill badge-tech">CSS</span>
+                                <span class="badge rounded-pill badge-tech">JavaScript</span>
+                                <span class="badge rounded-pill badge-tech">Bootstrap</span>
                             </div>
                             <a href="https://auar-watches.vercel.app/" target="_blank" class="btn btn-primary">View Project</a>
                         </div>
@@ -187,15 +103,15 @@
                 </div>
                 <div class="col-md-6 mb-4 project-card" id="project2">
                     <div class="card h-100">
-                        <img src="/ASSETS/Images/Untitled.png" class="project-img card-img-top" alt="Karabal Aidiniyat Class Admission Form">
+                        <img src="/ASSETS/Images/Untitled.png" class="project-img card-img-top" alt="Karabal Aidiniyat Class Admission Form project" loading="lazy" onerror="this.src='https://via.placeholder.com/300x220?text=Project+Image'">
                         <div class="card-body">
                             <h4 class="card-title">Karabal Aidiniyat Class Admission Form</h4>
                             <p class="card-text">An interactive admission form with validation and submission functionality for an educational institution.</p>
                             <div class="mb-3">
-                                <span class="badge badge-tech">HTML</span>
-                                <span class="badge badge-tech">CSS</span>
-                                <span class="badge badge-tech">JavaScript</span>
-                                <span class="badge badge-tech">Form Validation</span>
+                                <span class="badge rounded-pill badge-tech">HTML</span>
+                                <span class="badge rounded-pill badge-tech">CSS</span>
+                                <span class="badge rounded-pill badge-tech">JavaScript</span>
+                                <span class="badge rounded-pill badge-tech">Form Validation</span>
                             </div>
                             <a href="https://karabalaidiniyatclass-admissionform.vercel.app/" target="_blank" class="btn btn-primary">View Project</a>
                         </div>
@@ -206,7 +122,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-5">
+    <section id="skills" class="py-5" aria-labelledby="skills-title">
         <div class="container">
             <h2 class="section-title" id="skills-title">Technical Skills</h2>
             <div class="row">
@@ -242,6 +158,12 @@
                 </div>
                 <div class="col-md-6 skill-card" id="skill6">
                     <div class="bg-white shadow-sm p-3">
+                        <h4><i class="bi bi-database text-primary"></i> SQL Server</h4>
+                        <p>Knowledge of designing and managing databases, writing SQL queries, and handling data for web applications.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 skill-card" id="skill7">
+                    <div class="bg-white shadow-sm p-3">
                         <h4><i class="bi bi-translate text-primary"></i> Languages</h4>
                         <p>English, Urdu, Japanese (elementary)</p>
                     </div>
@@ -251,7 +173,7 @@
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="py-5 bg-light">
+    <section id="education" class="py-5 bg-light" aria-labelledby="education-title">
         <div class="container">
             <h2 class="section-title" id="education-title">Education & Qualifications</h2>
             <div class="row">
@@ -287,7 +209,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-5">
+    <section id="contact" class="py-5" aria-labelledby="contact-title">
         <div class="container">
             <h2 class="section-title" id="contact-title">Contact Information</h2>
             <div class="row">
@@ -300,17 +222,22 @@
                     </div>
                 </div>
                 <div class="col-md-6" id="contact-form">
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" aria-label="Contact form">
+                        <input type="hidden" name="access_key" value="9cd1384f-dd31-4b06-bc01-cfadd9c54d33">
+                        <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio">
+                        <input type="hidden" name="redirect" value="https://yourportfolio.com/thank-you.html">
+                        <input type="checkbox" name="botcheck" style="display: none;">
                         <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
+                            <input type="text" name="name" class="form-control" placeholder="Your Name" required aria-label="Your name">
                         </div>
                         <div class="mb-3">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
+                            <input type="email" name="email" class="form-control" placeholder="Your Email" required aria-label="Your email">
                         </div>
                         <div class="mb-3">
-                            <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                            <textarea name="message" class="form-control" rows="4" placeholder="Your Message" required aria-label="Your message"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary" id="submit-btn">Send Message</button>
+                        <div id="form-submit-message" class="alert mt-3"></div>
                     </form>
                 </div>
             </div>
@@ -318,243 +245,25 @@
     </section>
 
     <!-- Footer -->
-    <footer class="text-center">
+    <footer class="text-center" aria-label="Footer">
         <div class="container">
             <div class="social-icons mb-3">
-                <a href="https://github.com" target="_blank"><i class="bi bi-github"></i></a>
-                <a href="https://linkedin.com" target="_blank"><i class="bi bi-linkedin"></i></a>
-                <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
-                <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+                <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub profile"><i class="bi bi-github"></i></a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn profile"><i class="bi bi-linkedin"></i></a>
+                <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter profile"><i class="bi bi-twitter"></i></a>
+                <a href="https://instagram.com/yourusername" target="_blank" aria-label="Instagram profile"><i class="bi bi-instagram"></i></a>
             </div>
-            <p>© 2025 Ahsan Abbas. All rights reserved.</p>
+            <p>© <span id="current-year"></span> Ahsan Abbas. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     
-    <script>
-        // Wait for the page to load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Verify GSAP and ScrollTrigger are loaded
-            console.log('GSAP:', typeof gsap !== 'undefined' ? 'Loaded' : 'Not Loaded');
-            console.log('ScrollTrigger:', typeof ScrollTrigger !== 'undefined' ? 'Loaded' : 'Not Loaded');
-
-            // Register ScrollTrigger plugin
-            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-                gsap.registerPlugin(ScrollTrigger);
-            } else {
-                console.error('GSAP or ScrollTrigger failed to load');
-                // Fallback: Ensure project cards are visible
-                document.querySelectorAll('.project-card, .skill-card').forEach(card => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                });
-            }
-
-            // Hero section animations
-            gsap.from("#profile-img", {
-                duration: 1,
-                y: -50,
-                opacity: 0,
-                ease: "back.out(1.7)"
-            });
-
-            gsap.from("#hero-title", {
-                duration: 1,
-                y: -30,
-                opacity: 0,
-                delay: 0.3,
-                ease: "power3.out"
-            });
-
-            gsap.from("#hero-subtitle", {
-                duration: 1,
-                y: -30,
-                opacity: 0,
-                delay: 0.6,
-                ease: "power3.out"
-            });
-
-            gsap.from("#hero-buttons", {
-                duration: 1,
-                y: 30,
-                opacity: 0,
-                delay: 0.9,
-                ease: "power3.out"
-            });
-
-            // Floating shapes animation
-            gsap.to("#shape1", {
-                duration: 20,
-                x: 100,
-                y: 50,
-                rotation: 360,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut"
-            });
-
-            gsap.to("#shape2", {
-                duration: 25,
-                x: -80,
-                y: -30,
-                rotation: -360,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut",
-                delay: 0.5
-            });
-
-            gsap.to("#shape3", {
-                duration: 30,
-                x: 50,
-                y: -80,
-                rotation: 180,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut",
-                delay: 1
-            });
-
-            // Create floating shapes
-            const createShapes = () => {
-                const colors = ["rgba(52, 152, 219, 0.2)", "rgba(155, 89, 182, 0.2)", "rgba(26, 188, 156, 0.2)"];
-                for (let i = 1; i <= 3; i++) {
-                    const shape = document.getElementById(`shape${i}`);
-                    shape.style.width = `${Math.random() * 150 + 50}px`;
-                    shape.style.height = shape.style.width;
-                    shape.style.background = colors[i-1];
-                    shape.style.top = `${Math.random() * 80 + 10}%`;
-                    shape.style.left = `${Math.random() * 80 + 10}%`;
-                }
-            };
-            createShapes();
-
-            // Section title animations
-            gsap.utils.toArray(".section-title").forEach(title => {
-                gsap.from(title, {
-                    scrollTrigger: {
-                        trigger: title,
-                        start: "top 90%",
-                        toggleActions: "play none none none"
-                    },
-                    duration: 0.8,
-                    x: -50,
-                    opacity: 0,
-                    ease: "power3.out"
-                });
-            });
-
-            // About section animations
-            gsap.from("#about-left", {
-                scrollTrigger: {
-                    trigger: "#about",
-                    start: "top 90%",
-                    toggleActions: "play none none none"
-                },
-                duration: 0.8,
-                x: -50,
-                opacity: 0,
-                ease: "power3.out"
-            });
-
-            gsap.from("#about-right", {
-                scrollTrigger: {
-                    trigger: "#about",
-                    start: "top 90%",
-                    toggleActions: "play none none none"
-                },
-                duration: 0.8,
-                x: 50,
-                opacity: 0,
-                ease: "power3.out",
-                delay: 0.2
-            });
-
-            // Projects animations
-            gsap.set(".project-card", { opacity: 0, y: 50 }); // Set initial state
-            gsap.utils.toArray(".project-card").forEach((card, i) => {
-                gsap.to(card, {
-                    scrollTrigger: {
-                        trigger: "#projects",
-                        start: "top 90%",
-                        toggleActions: "play none none none",
-                        onEnter: () => console.log(`Project card ${i + 1} animation triggered`)
-                    },
-                    duration: 0.8,
-                    y: 0,
-                    opacity: 1,
-                    ease: "power3.out",
-                    delay: i * 0.1
-                });
-            });
-
-            // Skills animations
-            gsap.set(".skill-card", { opacity: 0, y: 50 });
-            gsap.utils.toArray(".skill-card").forEach((card, i) => {
-                gsap.to(card, {
-                    scrollTrigger: {
-                        trigger: "#skills",
-                        start: "top 90%",
-                        toggleActions: "play none none none"
-                    },
-                    duration: 0.8,
-                    y: 0,
-                    opacity: 1,
-                    ease: "power3.out",
-                    delay: i * 0.1
-                });
-            });
-
-            // Education animations
-            gsap.utils.toArray("#edu1, #edu2, #edu3").forEach((edu, i) => {
-                gsap.from(edu, {
-                    scrollTrigger: {
-                        trigger: "#education",
-                        start: "top 90%",
-                        toggleActions: "play none none none"
-                    },
-                    duration: 0.8,
-                    y: 50,
-                    opacity: 0,
-                    ease: "power3.out",
-                    delay: i * 0.2
-                });
-            });
-
-            // Contact animations
-            gsap.from("#contact-info", {
-                scrollTrigger: {
-                    trigger: "#contact",
-                    start: "top 90%",
-                    toggleActions: "play none none none"
-                },
-                duration: 0.8,
-                x: -50,
-                opacity: 0,
-                ease: "power3.out"
-            });
-
-            gsap.from("#contact-form", {
-                scrollTrigger: {
-                    trigger: "#contact",
-                    start: "top 90%",
-                    toggleActions: "play none none none"
-                },
-                duration: 0.8,
-                x: 50,
-                opacity: 0,
-                ease: "power3.out",
-                delay: 0.2
-            });
-
-            // Form submission handling
-            document.getElementById('contactForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Form submitted! (No backend implemented yet)');
-                this.reset();
-            });
-        });
-    </script>
+    <script src="/ASSETS/JS/script.js"></script>
 </body>
 </html>
