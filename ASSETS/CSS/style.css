@@ -1,213 +1,83 @@
-:root {
+ :root {
             --primary-color: #3498db;
             --secondary-color: #2c3e50;
-            --bg-color: #ffffff;
-            --text-color: #333333;
-            --card-bg: #ffffff;
-            --section-bg: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            --footer-bg: #2c3e50;
-            --footer-text: #ffffff;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--text-color);
-            background: var(--bg-color);
+            color: #333;
             overflow-x: hidden;
-            transition: var(--transition);
-            line-height: 1.6;
-            font-size: 1.1rem;
-            font-weight: 400;
         }
-
         .hero {
-            background: var(--secondary-color);
-            color: var(--footer-text);
-            padding: 120px 0;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 100px 0;
             position: relative;
             overflow: hidden;
         }
-
         .profile-img {
-            width: 220px;
-            height: 220px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid var(--card-bg);
-            transition: var(--transition);
+            border: 5px solid white;
         }
-
         .section-title {
             color: var(--primary-color);
             position: relative;
-            padding-bottom: 12px;
-            margin-bottom: 40px;
-            font-size: 2.5rem;
-            font-weight: 600;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
         }
-
         .section-title:after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--primary-color);
-            transition: var(--transition);
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
         }
-
-        .skill-card, .project-card {
-            border-left: 4px solid var(--primary-color);
-            padding: 20px;
-            margin-bottom: 20px;
-            background: var(--card-bg);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
+        .project-card {
+            transition: transform 0.3s;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .project-card.show {
             opacity: 1;
+            transform: translateY(0);
         }
-
-        .skill-card:hover, .project-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        .project-card:hover {
+            transform: translateY(-5px) !important;
         }
-
-        .contact-info i {
-            color: var(--primary-color);
-            margin-right: 12px;
-            font-size: 1.2rem;
-        }
-
-        footer {
-            background: var(--footer-bg);
-            color: var(--footer-text);
-            padding: 40px 0;
-        }
-
-        .social-icons a {
-            color: var(--footer-text);
-            font-size: 1.8rem;
-            margin: 0 12px;
-            transition: var(--transition);
-        }
-
-        .social-icons a:hover {
-            color: var(--primary-color);
-        }
-
         .project-img {
-            height: 220px;
+            height: 200px;
             object-fit: cover;
             width: 100%;
-            background: url('https://via.placeholder.com/300x220?text=Project+Image') no-repeat center/cover;
-            transition: var(--transition);
         }
-
         .badge-tech {
-            background: var(--primary-color);
-            margin-right: 6px;
-            margin-bottom: 6px;
-            padding: 6px 12px;
-            color: #ffffff;
+            background-color: var(--primary-color);
+            margin-right: 5px;
+            margin-bottom: 5px;
         }
-
-        .badge-featured {
-            background: #e74c3c;
-            color: #ffffff;
-            padding: 6px 12px;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-        }
-
         .floating-shape {
             position: absolute;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.1);
             z-index: 0;
-            transition: var(--transition);
         }
-
         #form-submit-message {
             display: none;
-            margin-top: 20px;
-            transition: var(--transition);
+            margin-top: 15px;
         }
-
-        #projects {
-            min-height: 500px;
-            background: var(--section-bg);
-        }
-
-        .card {
-            background: var(--card-bg);
-            transition: var(--transition);
-        }
-
-        .navbar-dark .navbar-nav .nav-link {
-            color: var(--footer-text);
-            transition: var(--transition);
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
+        .loading-spinner {
             display: none;
-            background: var(--primary-color);
-            color: var(--footer-text);
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            text-align: center;
-            line-height: 50px;
-            font-size: 1.5rem;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            z-index: 1000;
-        }
-
-        .back-to-top:hover {
-            background: var(--secondary-color);
-        }
-
-        .form-loading::after {
-            content: '';
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            border: 2px solid var(--footer-text);
-            border-radius: 50%;
-            border-top-color: transparent;
-            animation: spin 1s linear infinite;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
             margin-left: 10px;
         }
-
         @keyframes spin {
             to { transform: rotate(360deg); }
-        }
-
-        /* Accessibility */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
-        }
-
-        .btn-primary {
-            color: #ffffff;
-            background: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-
-        .btn-outline-light {
-            color: var(--footer-text);
-            border-color: var(--footer-text);
         }
